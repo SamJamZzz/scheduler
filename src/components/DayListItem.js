@@ -21,4 +21,4 @@ export default function DayListItem(props) {
       {formatSpots(props.spots)}
     </li>
   );
-}
+};
