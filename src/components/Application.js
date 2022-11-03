@@ -67,7 +67,7 @@ export default function Application(props) {
       key={appointment.id}
       {...appointment}
     />
-  ))
+  ));
   appointmentsArray.push(<Appointment key="last" time="5pm" />);
 
   return (
