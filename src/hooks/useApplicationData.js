@@ -37,7 +37,7 @@ export default function useApplicationData(initial) {
     };
 
     return axios.put(`/api/appointments/${id}`, { interview })
-    .then(setState({ ...state, appointments, days: calculateSpotsRemaining(state, appointments) }));
+    .then(() => setState({ ...state, appointments, days: calculateSpotsRemaining(state, appointments) }));
   }
 
   function cancelInterview(id) {
@@ -52,7 +52,7 @@ export default function useApplicationData(initial) {
     };
 
     return axios.delete(`/api/appointments/${id}`)
-    .then(setState(prev => ({ ...prev, appointments, days: calculateSpotsRemaining(state, appointments) })));
+    .then(() => setState(prev => ({ ...prev, appointments, days: calculateSpotsRemaining(state, appointments) })));
   }
 
   const setDay = day => setState({ ...state, day });
